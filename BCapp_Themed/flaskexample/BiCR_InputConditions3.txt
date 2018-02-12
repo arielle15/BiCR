@@ -1,0 +1,50 @@
+Drug	Article	Type	Hormones	PreferPill	PreferOther	NoCHC	NoIUD	CuIUDonly
+apri	a	pill	progestin and estrogen		1	1		1
+aubra	a	pill	progestin and estrogen		1	1		1
+aviane	a	pill	progestin and estrogen		1	1		1
+blisovi-24-fe	a	pill	progestin and estrogen		1	1		1
+chateal	a	pill	progestin and estrogen		1	1		1
+cryselle	a	pill	progestin and estrogen		1	1		1
+depo-provera	an	injection	progestin only	1				1
+estarylla	a	pill	progestin and estrogen		1	1		1
+generess-fe	a	pill	progestin and estrogen		1	1		1
+gianvi	a	pill	progestin and estrogen		1	1		1
+gildess-fe-1-20	a	pill	progestin and estrogen		1	1		1
+junel-fe-1-20	a	pill	progestin and estrogen		1	1		1
+kyleena	an	IUD	progestin only	1			1	1
+levora	a	pill	progestin and estrogen		1	1		1
+liletta	an	IUD	progestin only	1			1	1
+lo-loestrin-fe	a	pill	progestin and estrogen		1	1		1
+loestrin-24-fe	a	pill	progestin and estrogen		1	1		1
+lutera	a	pill	progestin and estrogen		1	1		1
+microgestin-fe-1-20	a	pill	progestin and estrogen		1	1		1
+minastrin-24-fe	a	pill	progestin and estrogen		1	1		1
+mirena	an	IUD	progestin and estrogen	1		1	1	1
+mononessa	a	pill	progestin and estrogen		1	1		1
+nexplanon	an	implant	progestin only	1				1
+nuvaring	a	vaginal ring	progestin and estrogen	1		1		1
+orsythia	a	pill	progestin and estrogen		1	1		1
+ortho-tri-cyclen-lo	a	pill	progestin and estrogen		1	1		1
+ortho-tri-cyclen	a	pill	progestin and estrogen		1	1		1
+paragard	an	IUD	copper (no hormones)	1			1	
+reclipsen	a	pill	progestin and estrogen		1	1		1
+seasonique	a	pill	progestin and estrogen		1	1		1
+skyla	an	IUD	progestin only	1			1	1
+sprintec	a	pill	progestin and estrogen		1	1		1
+sronyx	a	pill	progestin and estrogen		1	1		1
+tri-previfem	a	pill	progestin and estrogen		1	1		1
+tri-sprintec	a	pill	progestin and estrogen		1	1		1
+trinessa	a	pill	progestin and estrogen		1	1		1
+xulane	a	patch	progestin and estrogen	1		1		1
+yasmin	a	pill	progestin and estrogen		1	1		1
+yaz	a	pill	progestin and estrogen		1	1		1
+copper topical	an	IUD	copper (no hormones)	1			1	
+desogestrel ethinyl estradiol	a	pill	progestin and estrogen		1	1		1
+drospirenone ethinyl estradiol levomefolate calcium	a	pill	progestin and estrogen		1	1		1
+drospirenone ethinyl estradiol	a	pill	progestin and estrogen		1	1		1
+ethinyl estradiol levonorgestrel	a	pill	progestin and estrogen		1	1		1
+ethinyl estradiol norelgestromin	a	patch	progestin and estrogen	1		1		1
+ethinyl estradiol norethindrone	a	pill	progestin and estrogen		1	1		1
+ethinyl estradiol norgestimate	a	pill	progestin and estrogen		1	1		1
+etonogestrel	an	implant	progestin only	1				1
+norethindrone	a	pill	progestin only		1			1

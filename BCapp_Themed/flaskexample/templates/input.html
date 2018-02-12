@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SHIELD - Free Bootstrap 3 Theme">
+    <meta name="author" content="Carlos Alvarez - Alvarez.is - blacktie.co">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+
+    <title>BiCR - Birth Control Recommender</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/icomoon.css') }}">
+    <link href="{{ url_for('static', filename='css/animate-custom.css') }}" rel="stylesheet">
+
+
+    
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/modernizr.custom.js') }}"></script>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="{{ url_for('static', filename='js/html5shiv.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/respond.min.js') }}"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
+  
+  
+  	<div id="navbar-main">
+      <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span style="font-size:30px; color:#3498db;">BiCR</span>
+          </button>
+          <a class="navbar-brand hidden-xs hidden-sm" href="#home"><span style="font-size:30px; color:#3498db;">BiCR</span></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="input" class="smoothScroll">Home</a></li>
+            <li> <a href="about" class="smoothScroll"> About</a></li>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    </div>
+                <br /><br />
+		<!-- ==== GREYWRAP ==== -->
+		<div id="greywrap">
+			<div class="row">
+				<div class="col-lg-6 callout">
+					<span class="icon icon-heart"></span>
+					<h2>How to Use</h2>
+					<p>Enter in your least desired side effects and a couple of other details and we will choose your ideal birth control</p>
+				</div><!-- col-lg-4 -->
+				
+				<div class="col-lg-6 callout">
+					<span class="icon icon-bars"></span>
+					<h2>Data Science</h2>
+					<p>We analyze thousands of user reviews for nearly 50 birth control medications and calculate your best options</p>
+				</div><!-- col-lg-4 -->	
+			</div><!-- row -->
+		</div><!-- greywrap -->
+		
+		
+		<!-- ==== SERVICES ==== -->
+                <br />
+		<div class="container" id="services">
+                    <div class="panel panel-default" >
+                        <div class="panel-heading">
+                            <div class="panel-title">Find Your Ideal Birth Control</div>
+                        </div>
+                        <div style="padding-top:30px" class="panel-body" >
+                            <form action="/output" method="GET" class="form">
+                              <div class="form-group">
+                                <label for="side_effect">Which side effects bother you the most?</label>
+                                <fieldset>
+                                   <div class="col-md-4">
+									   <label class="checkbox">
+										 <input type="checkbox" id="acne" name="side_effect" value="acne">Acne
+									   </label>
+										<label class="checkbox">
+										  <input type="checkbox" id="cramps" name="side_effect" value="cramps">Cramps
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="weightgain" name="side_effect" value="weightgain">Weight gain
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="nausea" name="side_effect" value="nausea">Nausea
+										</label>
+									</div>
+									<div class="col-md-4">
+										<label class="checkbox">
+										  <input type="checkbox" id="spotting" name="side_effect" value="spotting">Spotting
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="headaches" name="side_effect" value="headaches">Headache/migraine
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="moodswings" name="side_effect" value="moodswings">Mood swings
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="nervousness" name="side_effect" value="nervousness">Nervousness/anxiety
+										</label>
+									</div>
+									<div class="col-md-4">
+										<label class="checkbox">
+										  <input type="checkbox" id="dizziness" name="side_effect" value="dizziness">Dizziness
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="sexdrive" name="side_effect" value="sexdrive">Decreased sex drive
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="breastpain" name="side_effect" value="breastpain">Breast pain
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="vaginalinfections" name="side_effect" value="vaginalinfections">Vaginal/yeast infection
+										</label>		
+									</div>										
+                                </fieldset>
+                              </div>
+                              <div class="form-group">
+                                <label for="bc_type">Do you prefer a pill or an alternate method (IUD, ring, patch, injection)?</label>
+                                <fieldset>
+                                    <label class="checkbox-inline">
+                                          <input type="radio" id="pill" name="bc_type" value="pill">Pill
+                                    </label>
+                                    <label class="checkbox-inline">
+                                          <input type="radio" id="other_type" name="bc_type" value="other_type">IUD, ring, patch, or injection
+                                    </label>
+                                    <label class="checkbox-inline">
+                                          <input type="radio" id="no_pref" name="bc_type" value="no_pref">No preference
+                                    </label>
+                                </fieldset>
+                              </div>
+                              <div class="form-group">
+                                <label for="condition">Do any of the following conditions apply to you?</label>
+                                <fieldset>
+									<div class="col-md-4">
+										<label class="checkbox">
+										  <input type="checkbox" id="dvt" name="condition" value="dvt">Deep vein thrombosis/Pulmonary embolism
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="aura" name="condition" value="aura">Migraine with aura
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="bloodpressure" name="condition" value="bloodpressure">High blood pressure
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="pelvic" name="condition" value="pelvic">Pelvic inflammatory disease
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="smoker" name="condition" value="smoker">Smoker over age 35
+										</label>
+									</div>
+									<div class="col-md-4">
+										<label class="checkbox">
+										  <input type="checkbox" id="breastcancer" name="condition" value="breastcancer">Breast cancer
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="cervicalcancer" name="condition" value="cervicalcancer">Cervical cancer
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="endometrialcancer" name="condition" value="endometrialcancer">Endometrial cancer
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="heart" name="condition" value="heart">Ischemic heart disease
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="livertumors" name="condition" value="livertumors">Liver tumors
+										</label>
+									</div>
+									<div class="col-md-4">
+										<label class="checkbox">
+										  <input type="checkbox" id="peripartum" name="condition" value="peripartum">Peripartum cardiomyopathy
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="postpartum" name="condition" value="postpartum">Postpartum sepsis
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="tb" name="condition" value="tb">Pelvic tuberculosis
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="bleeding" name="condition" value="bleeding">Unexplained vaginal bleeding
+										</label>
+										<label class="checkbox">
+										  <input type="checkbox" id="stroke" name="condition" value="stroke">Stroke
+										</label>	
+									</div>
+                                </fieldset>
+                              </div>							  
+
+                            <div class="col-sm-12 controls">
+                                <button type="submit" class="btn btn-default btn-lg">Find</button>
+                            </div>
+
+                            </form>
+                        </div>
+                    </div><!-- container -->
+                </div>
+
+		<div id="footerwrap">
+			<div class="container">
+				<p><font color="white">This web app is for educational purposes only! Please inform your doctor of your entire medical history before starting on a new birth control!</font></p>
+			</div>
+		</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+		
+
+	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/retina.js') }}js/retina.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.easing.1.3.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/smoothscroll.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-func.js') }}"></script>
+  </body>
+</html>
