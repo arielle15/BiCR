@@ -6,6 +6,12 @@ import sklearn
 import pickle
 import pandas as pd
 
+#Run this script after extracting birth control information from online user reviews (GetInfo_AllBC.py)
+#After running this script, run NegEx on files ending in '_PhrasesRatingsTableUpdate.txt' to determine whether side effects are affirmed or negated
+
+#Set working directory
+wd = ''
+
 #Dictionary with comments as keys, and their associated ratings as values.
 commentToRating = {}
 
@@ -47,7 +53,7 @@ indexToFile = {}
 ind = 0
 
 #Go through the comment file of each drug, extract comments, and remove comments that are duplicates
-for file in glob.glob('C:/Users/Arielle/OneDrive/CompBioProjects/InsightProject/DrugsScrapedFiles/*'):
+for file in glob.glob(wd + '*_UserComments_ForContraception3.txt'):
     print(file)
     indexToFile[ind] = file
     ind = ind + 1
@@ -116,7 +122,7 @@ for file in newFileOrder:
     print(bcName)        
     bcNameList.append(bcName)    
 
-with open('bcNameList.pkl', 'wb') as f:
+with open(wd + 'bcNameList.pkl', 'wb') as f:
     pickle.dump(bcNameList, f)
     
     
@@ -134,7 +140,7 @@ with open('bcNameList.pkl', 'wb') as f:
 #We will also keep track of sentences mentioning these side effects.
 
 #File with side effects
-sideEffectFile = pd.read_csv('SideEffectListTotal.txt', header = None)
+sideEffectFile = pd.read_csv(wd + 'SideEffectListTotal.txt', header = None)
 
 sideEffectList = sideEffectFile[0].tolist()
 
@@ -211,7 +217,7 @@ for se in sideEffectList:
                             pDict[p] = RecordSentenceRating(counter, rating, sent)
                     phraseToDrugScore.append(pDict)
                         
-    savePhrasesFile = open('Negex/AllSEfiles/save_' + se + '_PhrasesRatingsTableUpdate.txt', 'w', encoding = 'utf-8')
+    savePhrasesFile = open(wd + 'save_' + se + '_PhrasesRatingsTableUpdate.txt', 'w', encoding = 'utf-8')
     
 	#Write out phrases, ratings, and associated side effect (to be used as input for NegEx)
     for pd in phraseToDrugScore:
@@ -226,8 +232,8 @@ for se in sideEffectList:
         
 
 #Make tables with sentences and review ratings (to be used for retrieving sentences from review comments that are relevant to the user's input side effects)
-sentence_file = open('Sentences2.txt', 'w', encoding = 'utf-8')
-rating_file = open('Ratings2.txt', 'w', encoding = 'utf-8')
+sentence_file = open(wd + 'Sentences2.txt', 'w', encoding = 'utf-8')
+rating_file = open(wd + 'Ratings2.txt', 'w', encoding = 'utf-8')
 
 for i in drugToIDtoSentence:
     IDtoSentence = drugToIDtoSentence[i]

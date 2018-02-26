@@ -7,8 +7,13 @@ import math
 import time
 from random import randint
 
+#Run this script first to extract birth control user reviews and related information from drugs.com
+
+#Set working directory
+wd = ''
+
 #drugInfo contains the drug name, chemical composition, and number of comments for each drug (>= 100 comments required)
-drugInfo = open('C:/Users/Arielle/OneDrive/CompBioProjects/InsightProject/DrugCommentInfoUpdated.txt', 'r')
+drugInfo = open(wd + 'DrugCommentInfoUpdated.txt', 'r')
 
 drugInfoList = []
 
@@ -32,7 +37,7 @@ for drug in drugInfoList:
 
     num = 1
 
-    output = open('C:/Users/Arielle/Documents/' + bc + '_' + bc_fullName + '_UserComments_ForContraception3.txt', 'w', encoding = "utf-8")
+    output = open(wd + bc + '_' + bc_fullName + '_UserComments_ForContraception3.txt', 'w', encoding = "utf-8")
 
     if bc != '':
         bc = bc + '-'

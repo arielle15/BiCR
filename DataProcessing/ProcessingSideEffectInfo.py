@@ -5,7 +5,10 @@ import pandas as pd
 
 #Use this script after running NegEx on phrases from review comments.
 
-sideEffectFile = pd.read_csv('SideEffectListTotal.txt', header = None)
+#Set working directory
+wd = ''
+
+sideEffectFile = pd.read_csv(wd + 'SideEffectListTotal.txt', header = None)
 
 sideEffectList = sideEffectFile[0].tolist()
 
@@ -14,7 +17,7 @@ numDrugs = 49
 #For each drug, a string containing side effects that were mentioned for that drug
 reducedCommentList = ['']*numDrugs
 
-synonymsFile = open('SideEffectSynonyms.txt', 'r')
+synonymsFile = open(wd + 'SideEffectSynonyms.txt', 'r')
 
 #Store synonyms for each side effect - key represents synonym and value represents main side effect it's referring to.
 seToSynonyms = {}
@@ -38,7 +41,7 @@ seTableList = []
 
 #Reduce comments for each drug down to just the side effects that are mentioned (affirmed or negated mentions of side effects)
 for se in sideEffectList:
-    f = open('Negex/AllSEfiles/negex_output_' + se + '_updated_ratings_table2.txt', 'r', encoding = 'utf-8')
+    f = open(wd + 'negex_output_' + se + '_updated_ratings_table2.txt', 'r', encoding = 'utf-8')
     print(se)
     for line in f:
         line = line.rstrip('\n')
@@ -79,7 +82,7 @@ for se in sideEffectList:
             seTableList.append(seEntry)
 
 #Put side effects into table (to be used for retrieving comments relevant to the user's side effect inputs)
-seTable = open('sideEffectsTable.txt', 'w')			
+seTable = open(wd + 'sideEffectsTable.txt', 'w')			
 			
 for se in seTableList:
     seTable.write(se + '\n')
@@ -112,16 +115,16 @@ with np.errstate(divide='ignore'):
     percentChangeSEreverse = (1 - (totalSEfreq/perDrugSEfreq))*100
 
 
-with open('reducedCommentList.pkl', 'wb') as f:
+with open(wd + 'reducedCommentList.pkl', 'wb') as f:
     pickle.dump(reducedCommentList, f)  
     
-with open('sePercentChange.pkl', 'wb') as f:
+with open(wd + 'sePercentChange.pkl', 'wb') as f:
     pickle.dump(percentChangeSE, f)
     
-with open('sePercentChangeReverse.pkl', 'wb') as f:
+with open(wd + 'sePercentChangeReverse.pkl', 'wb') as f:
     pickle.dump(percentChangeSEreverse, f)    
 
-with open('bcNameList.pkl', 'rb') as f:
+with open(wd + 'bcNameList.pkl', 'rb') as f:
     bcNameList = pickle.load(f)
 
 

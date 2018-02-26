@@ -1,8 +1,11 @@
 #Revise ratings table so that ratings are integers
 
-f = open('Ratings2.txt', 'r')
+#Set working directory
+wd = ''
 
-output = open('Ratings3.txt', 'w')
+f = open(wd + 'Ratings2.txt', 'r')
+
+output = open(wd + 'Ratings3.txt', 'w')
 
 for line in f:
     line = line.rstrip('\n')

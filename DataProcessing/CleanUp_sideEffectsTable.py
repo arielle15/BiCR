@@ -1,7 +1,10 @@
 #Revise side effects table so that affirmed side effects are represented by a 1 and negated side effects are represented by a 0.
 
-f = open('sideEffectsTable.txt', 'r')
-output = open('sideEffectsTable2.txt', 'w')
+#Set working directory
+wd = ''
+
+f = open(wd + 'sideEffectsTable.txt', 'r')
+output = open(wd + 'sideEffectsTable2.txt', 'w')
 
 for line in f:
     line = line.rstrip('\n')

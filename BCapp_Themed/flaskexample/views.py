@@ -11,7 +11,8 @@ import sklearn
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-
+#Set working directory (contains 'BCapp_Themed' folder)
+wd = ''
 
 username = 'postgres'    
 password = '' #Removed password
@@ -27,9 +28,9 @@ engine = create_engine( 'postgresql://{}:{}@{}:{}/{}'.format(username, password,
 
 
 #Read in data with comment sentences, ratings, and side effect information for PostgreSQL table (only need for first time running code)
-#sentence_data = pd.read_csv('/home/ubuntu/BCapp_Themed/flaskexample/Sentences2.txt', delimiter = '\t', names = ["drug_id", "sentence_id", "sentence"])
-#ratings_data = pd.read_csv('/home/ubuntu/BCapp_Themed/flaskexample/Ratings3.txt', delimiter = '\t', names = ["drug_id", "sentence_id", "rating"])
-#se_data = pd.read_csv('/home/ubuntu/BCapp_Themed/flaskexample/sideEffectsTable2.txt', delimiter = '\t', names = ["drug_id", "sentence_id", "side_effect", "status"])
+#sentence_data = pd.read_csv(wd + 'BCapp_Themed/flaskexample/Sentences2.txt', delimiter = '\t', names = ["drug_id", "sentence_id", "sentence"])
+#ratings_data = pd.read_csv(wd + 'BCapp_Themed/flaskexample/Ratings3.txt', delimiter = '\t', names = ["drug_id", "sentence_id", "rating"])
+#se_data = pd.read_csv(wd + 'BCapp_Themed/flaskexample/sideEffectsTable2.txt', delimiter = '\t', names = ["drug_id", "sentence_id", "side_effect", "status"])
 
 #sentence_data.to_sql('sentence_data_table', engine, if_exists='replace')
 #ratings_data.to_sql('ratings_data_table', engine, if_exists='replace')
@@ -65,15 +66,15 @@ def bc_output():
 	conditions_input = request.args.getlist('condition')
 	
 	#Import various lists/dictionaries/files that contain drug, comment, and side effect information
-	with open('/home/ubuntu/BCapp_Themed/flaskexample/reducedCommentList.pkl', 'rb') as f:
+	with open(wd + 'BCapp_Themed/flaskexample/reducedCommentList.pkl', 'rb') as f:
 		reducedCommentList = pickle.load(f)
-	with open('/home/ubuntu/BCapp_Themed/flaskexample/bcNameList.pkl', 'rb') as f:
+	with open(wd + 'BCapp_Themed/flaskexample/bcNameList.pkl', 'rb') as f:
 		bcNameList = pickle.load(f)
-	with open('/home/ubuntu/BCapp_Themed/flaskexample/sePercentChange.pkl', 'rb') as f:
+	with open(wd + 'BCapp_Themed/flaskexample/sePercentChange.pkl', 'rb') as f:
 		sePercentChange = pickle.load(f)
-	with open('/home/ubuntu/BCapp_Themed/flaskexample/sePercentChangeReverse.pkl', 'rb') as f:
+	with open(wd + 'BCapp_Themed/flaskexample/sePercentChangeReverse.pkl', 'rb') as f:
 		sePercentChangeReverse = pickle.load(f)
-	with open('/home/ubuntu/BCapp_Themed/flaskexample/twoWordSEdict.pkl', 'rb') as f:
+	with open(wd + 'BCapp_Themed/flaskexample/twoWordSEdict.pkl', 'rb') as f:
 		twoWordSEdict = pickle.load(f)		
 	inputPrefInfo = pd.read_csv('/home/ubuntu/BCapp_Themed/flaskexample/BiCR_InputConditions3.txt', delimiter = '\t')
 	
