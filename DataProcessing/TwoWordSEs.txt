@@ -1,0 +1,5 @@
+weightgain	weight gain
+moodswings	mood swings
+sexdrive	decreased sex drive
+breastpain	breast pain
+vaginalinfections	vaginal infections

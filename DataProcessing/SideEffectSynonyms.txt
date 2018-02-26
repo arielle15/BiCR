@@ -1,0 +1,12 @@
+acne	breaking out	pimples	zits	
+cramps	cramp	cramping	crampy	
+spotting	spot	spotted		
+headaches	headache	migraine	migraines	
+sex drive	libido			
+weight gain	gained			
+nausea	nauseated	nauseous		
+dizziness	dizzy			
+mood swings	mood swing	mood change	mood changes	mood changed
+nervousness	nervous	anxious	anxiousness	anxiety
+breast pain	breast tenderness	tender breasts	sore breasts	breasts hurt
+vaginal infections	vaginal infection	yeast infections	yeast infection	vaginitis
